@@ -169,7 +169,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5"}, s, awful.layout.layouts[1])
+    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 "}, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -199,10 +199,10 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-  dp = awful.widget.watch([[bash -c "dropbox-cli status | head -n 1" ]], 10)
-  mem = awful.widget.watch('bash -c "free -h | rg Mem | choose 3"  ', 10)
-  cpu_temp = awful.widget.watch([[bash -c "sensors | rg Tdie | choose 1" ]], 10)
-  cpu_usage = awful.widget.watch([[ bash -c "mpstat | awk '/all/ { print 100 - int($13 + 0.5) }'" ]], 10)
+  dp = awful.widget.watch([[bash -c "dropbox-cli status | head -n 1" ]], 5)
+  mem = awful.widget.watch('bash -c "free -h | rg Mem | choose 3"  ', 5)
+  cpu_temp = awful.widget.watch([[bash -c "sensors | rg Tdie | choose 1" ]], 5)
+  cpu_usage = awful.widget.watch([[ bash -c "mpstat | awk '/all/ { print 100 - int($13 + 0.5) }'" ]], 5)
 
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -355,7 +355,7 @@ clientkeys = gears.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
+    awful.key({ modkey,      "Shift"     }, "Tab",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
