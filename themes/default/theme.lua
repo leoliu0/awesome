@@ -53,9 +53,14 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 )
 
 -- Variables set for theming notifications:
--- notification_font
+theme.notification_font = "Monospace 16"
 -- notification_[bg|fg]
+theme.notification_fg = "#f8f8ff"
+theme.notification_bg = "#555d50"
 -- notification_[width|height|margin]
+-- theme.notification_[width|height|margin]
+theme.notification_width = dpi(600)
+-- notification_[border_color|border_width|shape|opacity]
 -- notification_[border_color|border_width|shape|opacity]
 
 -- Variables set for theming the menu:
