@@ -237,9 +237,9 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    -- awful.button({ }, 3, function () mymainmenu:toggle() end),
+    awful.button({ }, 5, awful.tag.viewnext),
+    awful.button({ }, 4, awful.tag.viewprev)
 ))
 -- }}}
 
@@ -440,19 +440,19 @@ for i = 1, 9 do
     )
 end
 
-clientbuttons = gears.table.join(
-    awful.button({ }, 1, function (c)
-        c:emit_signal("request::activate", "mouse_click", {raise = true})
-    end),
-    awful.button({ modkey }, 1, function (c)
-        c:emit_signal("request::activate", "mouse_click", {raise = true})
-        awful.mouse.client.move(c)
-    end),
-    awful.button({ modkey }, 3, function (c)
-        c:emit_signal("request::activate", "mouse_click", {raise = true})
-        awful.mouse.client.resize(c)
-    end)
-)
+-- clientbuttons = gears.table.join(
+--     awful.button({ }, 1, function (c)
+--         c:emit_signal("request::activate", "mouse_click", {raise = true})
+--     end),
+--     awful.button({ modkey }, 1, function (c)
+--         c:emit_signal("request::activate", "mouse_click", {raise = true})
+--         awful.mouse.client.move(c)
+--     end),
+--     awful.button({ modkey }, 3, function (c)
+--         c:emit_signal("request::activate", "mouse_click", {raise = true})
+--         awful.mouse.client.resize(c)
+--     end)
+-- )
 
 -- Set keys
 root.keys(globalkeys)
@@ -468,7 +468,7 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      raise = true,
                      keys = clientkeys,
-                     buttons = clientbuttons,
+                     -- buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
