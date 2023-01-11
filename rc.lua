@@ -346,7 +346,7 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
-    awful.key({ modkey,           }, "f",
+    awful.key({ modkey,           }, "=",
         function (c)
             c.fullscreen = not c.fullscreen
             c:raise()
